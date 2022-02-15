@@ -27,7 +27,7 @@ public class HistoryServlet extends HttpServlet {
             req.setAttribute("msgEmpty", "History is empty");
             req.getServletContext().getRequestDispatcher(Constants.HISTORY_JSP).forward(req, resp);
         }
-        req.setAttribute("history", calculationResult.toString());
+        req.setAttribute("history", calculationResult);
         req.getServletContext().getRequestDispatcher(Constants.HISTORY_JSP).forward(req, resp);
     }
 }

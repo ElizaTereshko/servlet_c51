@@ -14,7 +14,6 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = Constants.CALCULATOR_LINK, name = "CalculatorServlet")
 public class CalculatorServlet extends HttpServlet {
-    private CalculationResultService calculationResultService = new CalculationResultService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,7 +34,7 @@ public class CalculatorServlet extends HttpServlet {
 
 
         double result = calculationResultService.calculate(operation);
-        calculationResultService.saveCalculationResult(operation, result, login);
+        calculationResultService.saveCalculationResult(result, login);
         req.setAttribute("result", "Result =" + result);
         req.getServletContext().getRequestDispatcher(Constants.CALCULATOR_JSP).forward(req, resp);
     }

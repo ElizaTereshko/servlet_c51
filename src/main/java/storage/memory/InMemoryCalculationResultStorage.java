@@ -15,8 +15,8 @@ public class InMemoryCalculationResultStorage implements CalculationResultStorag
     private final static Map <String, List<String> > calculationResultStorage = new ConcurrentHashMap<>();
 
     @Override
-    public void saveResult(String userLogin, String result) {
-            listCalculationResult.add(result);
+    public void saveResult(String userLogin, double result) {
+//            listCalculationResult.add(result);
             calculationResultStorage.remove(userLogin);
             calculationResultStorage.putIfAbsent(userLogin, listCalculationResult);
     }

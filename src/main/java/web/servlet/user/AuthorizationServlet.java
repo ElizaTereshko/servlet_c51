@@ -1,8 +1,5 @@
 package web.servlet.user;
 
-import entity.User;
-import service.UserService;
-import storage.memory.InMemoryUserStorage;
 import web.Constants;
 import web.validator.UserValidator;
 
